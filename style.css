@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100%;
+  background-color: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+}
+main {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+section {
+  display: grid;
+  grid-template-areas:
+    "first first second fifth"
+    "third fourth fourth fifth";
+  place-items: initial;
+  grid-template-columns: repeat(4, 1fr);
+  width: 95%;
+  gap: 2rem;
+  background-color: #112d4ed3;
+  margin: 2rem 0 5rem 0rem;
+  border-radius: 10px;
+}
+.container {
+  padding: 2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: scale 0.5 ease;
+}
+.quotation {
+  background-image: url("images/bg-pattern-quotation.svg");
+  background-position: right 10% top 0;
+  background-repeat: no-repeat;
+  background-size: 150px;
+}
+
+.first {
+  grid-area: first;
+  background-color: hsl(263, 55%, 52%);
+  margin: 2rem 0 0 2rem;
+}
+.second {
+  background-color: hsl(217, 19%, 35%);
+  grid-area: second;
+  margin: 2rem 0 0 0rem;
+}
+.third {
+  background-color: white;
+  grid-area: third;
+  margin: 0rem 0rem 2rem 2rem;
+}
+.fourth {
+  background-color: hsl(219, 29%, 14%);
+  grid-area: fourth;
+  margin: 0rem 0rem 2rem 0rem;
+}
+.fifth {
+  background-color: white;
+  grid-area: fifth;
+  margin: 2rem 2rem 2rem 0rem;
+}
+img {
+  border-radius: 50%;
+}
+.profile {
+  display: flex;
+  align-items: center;
+}
+.title {
+  margin-left: 1rem;
+}
+.heading-black {
+  color: black;
+  margin: 1rem 0rem;
+}
+.heading-white {
+  color: white;
+  margin: 1rem 0rem;
+}
+p {
+  color: hsl(0, 0%, 81%);
+}
+footer {
+  margin-top: auto;
+  text-align: center;
+}
+
+.container:hover {
+  scale: 1.05;
+}
+.name {
+  color: hsl(0, 0%, 41%);
+}
+.verified {
+  color: hsl(0, 0%, 81%);
+}
+
+@media (max-width: 1250px) and (min-width: 700px) {
+  section {
+    grid-template-areas:
+      "first first"
+      "second fifth"
+      "third fifth"
+      "fourth fourth";
+    place-items: initial;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .first {
+    margin: 2rem 2rem 0 2rem;
+  }
+  .second {
+    margin: 0 0 0 2rem;
+  }
+  .third {
+    margin: 0rem 0rem 0rem 2rem;
+  }
+  .fourth {
+    margin: 0rem 2rem 2rem 2rem;
+  }
+  .fifth {
+    margin: 0rem 2rem 0rem 0rem;
+  }
+}
+
+@media (max-width: 700px) {
+  section {
+    grid-template-areas:
+      "first"
+      "second"
+      "third"
+      "fifth"
+      "fourth";
+    place-items: initial;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .first {
+    margin: 2rem 2rem 0 2rem;
+  }
+  .second,
+  .third,
+  .fifth {
+    margin: 0rem 2rem 0 2rem;
+  }
+  .fourth {
+    margin: 0rem 2rem 2rem 2rem;
+  }
+}
